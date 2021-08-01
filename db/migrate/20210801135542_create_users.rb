@@ -3,9 +3,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name
       t.integer :age
-      t.integer :license_number
+      t.integer :licence_number
       t.string :email
-      t.integer :phone
+      t.string :phone
 
       t.timestamps
     end
