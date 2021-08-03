@@ -1,14 +1,16 @@
-<div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    
-  </div class="container">
+<div class="container card ">
+
   <h1><%= @boat.name %></h1>
-    <span class="movie-tag">"empty"</span>
+  <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+  <h3><%= @boat.description %></h3>
+  <h4><%= @boat.location %></h4>
+
+  <p><%= @boat.price_per_day %></p>
+  <div class="d-flex justify-content-between">
+    <small class="text-right flex-shrink-0"><%= link_to 'Delete', boat_path, method: :delete, data: { confirm: "Are you sure you want to remove #{@boat.name} from your #{@boat.name} boat"}, class: 'text-danger' %></small>
+    <small class="text-right flex-shrink-0"><%= link_to 'Edit', edit_boat_path(@boat) %></small>
+    <small class="text-right flex-shrink-0"><%= link_to 'Back to list', boats_path %></small>
   </div>
-<div class="container mb-5">
-  <hr class="my-5">
-  
-    </div>
-  </div>
-  <small class="text-right flex-shrink-0"><%= link_to 'delete', boat_path, method: :delete, data: { confirm: "Are you sure you want to remove #{@boat.name} from your #{@boat.name} boat"}, class: 'text-danger' %></small>
 </div>
+ 
+

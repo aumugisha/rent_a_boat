@@ -3,11 +3,14 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :photo %>
-  <%= f.file_field :description %>
+  <%= f.file_field :photo, as: :file %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
   <%= f.label :category %>
   <%= f.select :category, ['Yacht', 'Wind', 'Small']%> %>
   <%= f.label :location %>
-  <%= f.file_field :location %>
+  <%= f.text_field :location %>
+  <%= f.label :price_per_day %>
   <%= f.number_field :price_per_day, step: 0.1 %>
 
   
