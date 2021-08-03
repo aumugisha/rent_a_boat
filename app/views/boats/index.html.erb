@@ -10,9 +10,9 @@
 
   <h1 class="text-center"> Boats boat</h1>
   
-  <ul class="list-group">
+  <ul class="list-group cards">
     <% @boats.each do |boat| %>
-      <div class="card">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         <li class="boat-group-item"> <%= link_to boat.name, boat_path(boat)%> </li>
       </div>
     
@@ -21,4 +21,6 @@
   </ul>
 <%= link_to "Add new list", new_boat_path %>
 </div>
+
+
 

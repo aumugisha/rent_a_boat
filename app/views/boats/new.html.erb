@@ -1,9 +1,12 @@
-<div class="container">
+<div class="container form">
 <%= form_for(@boat) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.label :photo %>
   <%= f.file_field :description %>
+  <%= f.label :category %>
   <%= f.select :category, ['Yacht', 'Wind', 'Small']%> %>
+  <%= f.label :location %>
   <%= f.file_field :location %>
   <%= f.number_field :price_per_day, step: 0.1 %>
 
