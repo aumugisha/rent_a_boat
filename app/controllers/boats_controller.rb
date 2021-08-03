@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
-    before_action :set_boat
+    before_action :set_user,
+
 
     def new
         @boat = Boat.new
@@ -7,25 +8,40 @@ class BoatsController < ApplicationController
 
     def create
       @boat = Boat.new(boat_params)
-      @boat.user_id = params[:user_id]
-      if boat.save
+      @boat.user = @user
+      if @boat.save
         redirect_to boats_path
       else
         render "new"
+      end
     end
 
     def index
-        @boats = Boats.all
+        @boats = Boat.all
+    end
+    
+    def show
+      set_boat
+    end
+
+    def destroy
+      set_boat
+      @boat.destroy
+      redirect_to boats_path
     end
 
     private
 
     def set_boat
-      @boat = Boat.find(params[:boat_id])
+      @boat = Boat.find(params[:id])
+    end
+
+    def set_user
+      @user = current_user
     end
 
     def boat_params
-      params.require(:boat).permit(:name, :type, :description, :price_per_day, :location, :user_id)
+      params.require(:boat).permit(:name, :category, :description, :price_per_day, :location)
     end
 
 end
