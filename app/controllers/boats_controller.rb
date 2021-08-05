@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
-    before_action :set_user,
+    before_action :set_user
+    before_action :set_boat, only: [:show, :edit, :update ]
 
 
     def new
@@ -21,8 +22,16 @@ class BoatsController < ApplicationController
     end
     
     def show
-      set_boat
     end
+
+    def edit
+    end
+  
+    def update
+      @boat.update(boat_params)
+      redirect_to boat_path(@boat)
+    end
+  
 
     def destroy
       set_boat
@@ -41,7 +50,7 @@ class BoatsController < ApplicationController
     end
 
     def boat_params
-      params.require(:boat).permit(:name, :category, :description, :price_per_day, :location)
+      params.require(:boat).permit(:name, :category, :description, :price_per_day, :location, :photo)
     end
 
 end
