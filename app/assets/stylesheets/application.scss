@@ -16,13 +16,37 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
+    background-color: white;
+    width: 95%;
+    padding: 50px;
+    margin: auto;
+  }
+
+  #container-perso {
+      width: 75%;
+      margin: auto;
+      padding: auto;
+      background-color: white;
+      border-radius:30px;
+      padding: 10px;
   }
 
   .card-category {
-      width: 300px;
-      height: 200px;
+      width: 90%;
+      aspect-ratio: 1/1;
+      margin: 10px;
+      padding: 10px;    
+      background-size: cover;
+      background-position: top center;
+      font-size: 48px;
+      font-weight: bold;
+      border-radius:32px;
+  
+
   }
   
+
+
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
     .cards {
