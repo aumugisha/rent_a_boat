@@ -1,0 +1,8 @@
+#create a form for the booking
+<%= form_for(@booking) do |f| %>
+  <%=  %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :price  %>
+  <%= f.input :booking_status %>
+<% end %>

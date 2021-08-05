@@ -1,7 +1,9 @@
 <div class="container card ">
 
   <h1><%= @boat.name %></h1>
-  <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if @boat.photo.attached? %>
+    <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <h3><%= @boat.description %></h3>
   <h4><%= @boat.location %></h4>
 
