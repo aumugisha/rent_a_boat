@@ -10,6 +10,8 @@ require "open-uri"
 
 # User.destroy
 # Boat.destroy
+file = URI.open('https://source.unsplash.com/weekly?boat')
+
 
 user = User.create(
   email: "test@test.com", 
@@ -29,6 +31,8 @@ category = ["large boats", "medium boats", "small boats"]
     description: Faker::Lorem.sentence,
     price_per_day: (1..1000).to_a.sample.to_f,
     address:Faker::Address.full_address )
+    boat.photo.attach(io: file, filename: 'boat.jpg', content_type: 'image/jpg')
 
+puts boat.photo
 end
 
