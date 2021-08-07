@@ -12,17 +12,97 @@
 @import "components/index";
 @import "pages/index";
 
+
+.top-boats-page {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?boats);
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    width: 90%;
+    margin: auto;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    text-align: center;
+    padding-top: 150px;
+    min-height: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.container-perso {
+    width: 90%;
+    margin: auto;
+    padding: auto;
+    background-color: white;
+    border-end-start-radius: 30px;
+    border-end-end-radius: 30px;
+    padding: 10px;
+}
+
+.top-boats-page h1 {
+    font-size: 80px;
+    font-weight: bolder;
+    color: white;
+    margin: auto;
+    padding: auto;
+
+}
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
+    background-color: white;
+    width: 95%;
+    padding: 50px;
+    margin: auto;
   }
 
+
+
   .card-category {
-      width: 300px;
-      height: 200px;
-  }
+      width: 90%;
+      aspect-ratio: 1/1;
+      margin: 10px;
+      padding: 10px;    
+      background-size: cover;
+      background-position: top center;
+      font-size: 48px;
+      font-weight: bold;
+      border-radius:32px;
   
+  }
+
+  .boat-content{
+      display: flex;
+  }
+
+  .content {
+      margin: 20px;
+  }
+
+  .p-big {
+      font-size: 36px;
+  }
+  .p-medium {
+      font-size: 28px;
+  }
+  .p-small {
+    font-size: 16px;
+}
+  .boat-content img {
+      margin: 20px;
+      width: 40vw;
+      height: 25vw;
+  }
+
+.actions {
+    margin: 20px;
+    height: 50px;
+    font-size: 24px;
+}
+  
+
+
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
     .cards {

@@ -1,14 +1,21 @@
-<div class="container card ">
 
+<div class="top-boats-page">
+<br>
   <h1><%= @boat.name %></h1>
-  <% if @boat.photo.attached? %>
-    <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <h3><%= @boat.description %></h3>
-  <h4><%= @boat.location %></h4>
 
-  <p><%= @boat.price_per_day %></p>
-  <div class="d-flex justify-content-between">
+<div class="container-perso ">
+
+<div class="boat-content">  
+  <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="content">  <p class="p-big"><%= @boat.description %></p>
+  <p class="p-medium"><%= @boat.location %></p>
+
+
+  <p class="p-small"><%= @boat.price_per_day %></p>
+  </div>
+  <a class="btn btn-primary" href="#" style= "height: 50px; margin: auto" >Book now</a>
+</div>
+  <div class="d-flex justify-content-between actions">
     <small class="text-right flex-shrink-0"><%= link_to 'Delete', boat_path, method: :delete, data: { confirm: "Are you sure you want to remove #{@boat.name} from your #{@boat.name} boat"}, class: 'text-danger' %></small>
     <small class="text-right flex-shrink-0"><%= link_to 'Edit', edit_boat_path(@boat) %></small>
     <small class="text-right flex-shrink-0"><%= link_to 'Back to list', boats_path %></small>
