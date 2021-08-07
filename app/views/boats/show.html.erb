@@ -15,6 +15,11 @@
   </div>
   <a class="btn btn-primary" href="#" style= "height: 50px; margin: auto" >Book now</a>
 </div>
+
+<div id="map-show"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="d-flex justify-content-between actions">
     <small class="text-right flex-shrink-0"><%= link_to 'Delete', boat_path, method: :delete, data: { confirm: "Are you sure you want to remove #{@boat.name} from your #{@boat.name} boat"}, class: "btn btn-danger" %></small>
     <small class="text-right flex-shrink-0"><%= link_to 'Edit', edit_boat_path(@boat), class: "btn btn-primary" %></small>
