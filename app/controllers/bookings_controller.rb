@@ -1,15 +1,23 @@
+d 
 class BookingsController < ApplicationController
   def new
   @booking = Booking.new
   end
-
+​
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(params[:id])
     @booking.save
-
+​
     redirect_to booking_path(@booking)
   end
-
+​
+  def show
+    @booking = Booking(params[:id])
+  end
+​
+​
+​
+​
   private
   def booking_params
     params.require(:booking).permit(:name, :address, :rating)

@@ -1,17 +1,12 @@
 <div class="container form">
-<%= form_for(@boat) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :photo %>
-  <%= f.file_field :photo, as: :file %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+<%= simple_form_for(@boat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :description %>
   <%= f.label :category %>
-  <%= f.select :category, ['Large boat', 'Medium boat', 'Small boat']%> %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day, step: 0.01 %>
+  <%= f.select :category, ['Large boat', 'Medium boat', 'Small boat'] %>
+  <%= f.input :address %>
+  <%= f.input :price_per_day, step: 0.01 %>
 
   
    
