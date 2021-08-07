@@ -10,6 +10,11 @@ class BookingsController < ApplicationController
 ​
     redirect_to booking_path(@booking)
   end
+
+  def index
+    @bookings = Booking.all(params[:user_id])
+  end
+  
 ​
   def show
     @booking = Booking(params[:id])
