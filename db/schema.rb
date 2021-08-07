@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_183730) do
     t.bigint "boat_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "booking_status"
+    t.string "booking_status"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

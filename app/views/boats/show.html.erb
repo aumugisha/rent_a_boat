@@ -2,17 +2,14 @@
 <div class="top-boats-page">
 <br>
   <h1><%= @boat.name %></h1>
-<br>
-</div>
-
 
 <div class="container-perso ">
 
-  
 <div class="boat-content">  
   <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
 <div class="content">  <p class="p-big"><%= @boat.description %></p>
   <p class="p-medium"><%= @boat.location %></p>
+
 
   <p class="p-small"><%= @boat.price_per_day %></p>
   </div>

@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create(
+  email: "test@test.com", 
+  password: "12345678"
+)
+
+user_two = User.create(
+  email: "tests@test.com", 
+  password: "12345678"
+)
+category = ["large boats", "medium boats", "small boats"]
+10.times do 
+  Boat.create(
+    user_id: user.id, 
+    name: Faker::Name.name,
+    category: category.sample,
+    description: Faker::Lorem.sentence,
+    price_per_day: (1..1000).to_a.sample.to_f,
+    location:Faker::Address.full_address 
+  )
+end
