@@ -28,7 +28,7 @@ category = ["large boats", "medium boats", "small boats"]
     category: category.sample,
     description: Faker::Lorem.sentence,
     price_per_day: (1..1000).to_a.sample.to_f,
-    address:Faker::Address.full_address )
+    address: Faker::Address.full_address )
 
 end
 
