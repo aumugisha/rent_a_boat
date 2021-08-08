@@ -8,8 +8,10 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy
-# Boat.destroy
+file = URI.open('https://source.unsplash.com/weekly?boat')
+Booking.destroy_all
+Boat.destroy_all
+User.destroy_all
 
 user = User.create(
   email: "test@test.com", 
@@ -28,7 +30,13 @@ category = ["large boats", "medium boats", "small boats"]
     category: category.sample,
     description: Faker::Lorem.sentence,
     price_per_day: (1..1000).to_a.sample.to_f,
+<<<<<<< HEAD
     address: Faker::Address.full_address )
+=======
+    address:Faker::Address.full_address )
+    boat.photo.attach(io: file, filename: 'boat.jpg', content_type: 'image/jpg')
+>>>>>>> deec07ef1650b13bb44fc9cf0c9a7d624bb88d34
 
+puts boat.photo
 end
 
