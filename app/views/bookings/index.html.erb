@@ -1,0 +1,39 @@
+
+<div class="top-boats-page">
+  <h1>Bookings list</h1>
+</div>
+
+
+
+<div class="container">
+<%= form_tag boats_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a boat"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+<% @bookings.each do |booking| %>
+    <li>
+    <%= link_to booking.user.first_name, boat_booking_path(@boat, booking), {:style=>'color:black; '} %> <br>
+    </li>
+ <% end %>
+</ul>
+
+<div class="container-perso">
+<ul>
+
+
+  <%= link_to "Add new boat", new_boat_path %>
+  <br>
+  <div class="map-container"><div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div></div>
+</div>
+
+
