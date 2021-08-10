@@ -29,7 +29,6 @@ class BoatsController < ApplicationController
     end
     
     def show
-      @marker = @boat.geocoded.map( lat: flat.latitude,lng: flat.longitude)
     end
 
     def edit
