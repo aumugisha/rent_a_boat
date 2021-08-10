@@ -2,6 +2,22 @@ class BoatsController < ApplicationController
     before_action :set_user
     before_action :set_boat, only: [:show, :edit, :update ]
 
+    def index
+      if params[:query].present?
+        @boats =Boat.search_by_description_and_address(params[:query])
+      else
+        @boats = Boat.all
+      end 
+        @markers = @boats.geocoded.map do |boat|
+          {
+            lat: boat.latitude,
+            lng: boat.longitude
+          }
+        end
+    end
+
+    def show
+    end
 
     def new
         @boat = Boat.new
@@ -17,19 +33,9 @@ class BoatsController < ApplicationController
       end
     end
 
-    def index
-        @boats = Boat.all
-
-        @markers = @boats.geocoded.map do |boat|
-          {
-            lat: boat.latitude,
-            lng: boat.longitude
-          }
-        end
-    end
+ 
     
-    def show
-    end
+
 
     def edit
     end
