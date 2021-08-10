@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :users
   resources :boats do
-    resources :bookings, only: [:new, :create, :show, :index] 
+  resources :bookings
   end 
 
   root to: 'pages#home'
