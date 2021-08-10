@@ -35,7 +35,7 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
 
 10.times do |i|
   puts i 
-  file = URI.open('app/assets/images/boat.jpg')
+  file = URI.open('https://source.unsplash.com/1600x900/?boat')
   boat = Boat.create(
     user_id: user.id, 
     name: Faker::Name.name,
