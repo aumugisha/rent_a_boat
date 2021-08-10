@@ -6,14 +6,14 @@
 <div class="container-perso ">
 
 <div class="boat-content">  
-  <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+  <%# <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
 <div class="content">  <p class="p-big"><%= @boat.description %></p>
   <p class="p-medium"><%= @boat.address %></p>
 
 
   <p class="p-small"><%= @boat.price_per_day %></p>
   </div>
-  <a class="btn btn-primary" href="#" style= "height: 50px; margin: auto" >Book now</a>
+  <%= link_to "Book now", new_boat_booking_path(@boat) %>
 </div>
 
   <div class="d-flex justify-content-between actions">
