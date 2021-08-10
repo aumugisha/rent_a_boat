@@ -8,19 +8,23 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
 Booking.destroy_all
 Boat.destroy_all
 User.destroy_all
 
 user = User.create(
   email: "test@test.com", 
-  password: "12345678"
+  password: "12345678",
+  first_name: "Albert",
+  last_name: "Frere"
 )
 
 user_two = User.create(
   email: "tests@test.com", 
-  password: "12345678"
+  password: "12345678",
+  first_name: "Georges",
+  last_name: "Dupont"
 )
 category = ["large boats", "medium boats", "small boats"]
 addresses = ["Brugplein 11", "3198 LK Europoort", 
@@ -28,9 +32,10 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
 "Nijverheidsstraat 11A", "149 Waterside Rd, Barton-upon-Humber DN18 5BG, United Kingdom",
 "King's Saltern Rd, Lymington SO41 3QD, United Kingdom", "The Docks, Hakin, Milford Haven SA73 3AX, United Kingdom",
 "Playa de Río Real Carretera N340 km 186, 29600 Marbella, Málaga, Spain","Av. Carmen Sevilla, s/n, 29670 Marbella, Málaga, Spain" ]
-i = 0
-10.times do
-  
+
+10.times do |i|
+  puts i 
+  file = URI.open('https://source.unsplash.com/1600x900/?boat')
   boat = Boat.create(
     user_id: user.id, 
     name: Faker::Name.name,
@@ -38,8 +43,8 @@ i = 0
     description: Faker::Lorem.sentence,
     price_per_day: (1..1000).to_a.sample.to_f,
     address: addresses[i] )
-    # boat.photo.attach(io: file, filename: "boat#{i}.jpg", content_type: 'image/jpg'
-    i += 1;
+    boat.photo.attach(io: file, filename: "boat#{i}.jpg", content_type: 'image/jpg')
+    file.close
   
 
 puts boat.name
