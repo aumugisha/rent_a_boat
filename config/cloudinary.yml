@@ -1,6 +1,0 @@
-production:
-  cloud_name: "dtxzfehbh"
-  api_key: "584997397171487"
-  api_secret: "0RRBqXtEUpqNKaxz3-7FznlpkTs"
-  secure: true
-  cdn_subdomain: true
