@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+8b33b749150cce788eb2365ae8fec77f83004170 refs/remotes/origin/arthrur/new-ruby-version
+3d8d64dd2e9d7b9f46284d3904523bd805466111 refs/remotes/origin/arthur/add_links_between_tables
+bfaaed8a7e41f57b6ee3f75fd574fc7c6c11caa4 refs/remotes/origin/arthur/add_validations
+c0f46f6e16a7dfd75654aa52883fd86328a26dbc refs/remotes/origin/arthuru/add_boat_model
+f1b8131e24c270725eac20002da7ac627af53830 refs/remotes/origin/master
+5e0ee14975685936c74d5477502c38f8c8ba6465 refs/remotes/origin/ramiro/booking
+d041d15ed642e6935022847bbf76772d0242e38e refs/remotes/origin/sino/user-model
