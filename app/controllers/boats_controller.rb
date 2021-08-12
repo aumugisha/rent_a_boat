@@ -17,6 +17,10 @@ class BoatsController < ApplicationController
     end
 
     def show
+      @marker= [{
+        lat: @boat.geocode[0],
+        lng: @boat.geocode[1]
+      } ]
     end
 
     def new
