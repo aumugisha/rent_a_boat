@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :views
+  resources :users, only: [:show]
   devise_for :users
   resources :boats do
   resources :bookings
