@@ -7,13 +7,12 @@
 
 <div class="boat-content">  
   <%# <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
-<div class="content">  <p class="p-big"><%= @boat.description %></p>
-  <p class="p-medium"><%= @boat.address %></p>
-
-
-  <p class="p-small"><%= @boat.price_per_day %></p>
+  <div class="content">  <p class="p-big"><%= @boat.description %></p>
+    <p class="p-medium"><%= @boat.address %></p>  
+    <%= link_to @boat.user.full_name, users_show_path(@boat), {:style=>'color:blue; '} %>
+    <p class="p-small"><%= @boat.price_per_day %></p>
   </div>
-  <%= link_to "Book now", new_boat_booking_path(@boat) %>
+<%= link_to "Book now", new_boat_booking_path(@boat) %>
 </div>
 
   <div class="d-flex justify-content-between actions">
@@ -25,7 +24,8 @@
   <div class="map-container"><div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
  
 

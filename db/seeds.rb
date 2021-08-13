@@ -15,12 +15,16 @@ User.destroy_all
 
 user = User.create(
   email: "test@test.com", 
-  password: "12345678"
+  password: "12345678",
+  first_name: "john",
+  last_name: "Doe"
 )
 
 user_two = User.create(
   email: "tests@test.com", 
-  password: "12345678"
+  password: "12345678",
+  first_name: "Ramiro",
+  last_name: "Penedo"
 )
 category = ["large boats", "medium boats", "small boats"]
 addresses = ["Brugplein 11", "3198 LK Europoort", 
@@ -40,7 +44,7 @@ i = 0
 
     address: Faker::Address.full_address )
 
-    boat.photo.attach(io: file, filename: 'boat.jpg', content_type: 'image/jpg')
+    # boat.photo.attach(io: file, filename: 'boat.jpg', content_type: 'image/jpg')
 
 
     i += 1;
