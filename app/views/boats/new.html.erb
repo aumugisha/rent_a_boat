@@ -1,7 +1,7 @@
 <div class="container form">
 <%= simple_form_for(@boat) do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo, as: :file, multiple: true %>
+  <%= f.input :photos, as: :file, input_html: {multiple: true} %>
   <%= f.input :description %>
   <%= f.label :category %>
   <%= f.select :category, ['Large boat', 'Medium boat', 'Small boat'] %>

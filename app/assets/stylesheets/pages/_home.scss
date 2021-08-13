@@ -1,3 +1,16 @@
+#1{
+
+  background-image: url(https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+}
+#kb{
+  background-image: url('app/assets/images/boat.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#image{
+  background-color: white;
+}
 .title {
 
   font-style: unset;
@@ -5,7 +18,9 @@
 }// Specific CSS for your home-page
 
 
-
+#h2{
+  text-align: center;
+}
 
 .container {
 
@@ -22,3 +37,95 @@ h1{
 
 
 }
+#1{
+color:red;
+border : 1px solid red;
+border-radius: 15px;
+padding:20px;
+text-decoration: none;
+
+}
+#1 :hover{
+  color: white;
+  background-color: rgba(178,32,19,0.8);
+}
+
+html{
+  font-family: arial;
+  font-size: 16px;
+  font-weight: normal;
+
+}
+#3{
+
+
+}
+#hero{
+
+}
+
+
+.hero-full-screen {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  // background: url("https://source.unsplash.com/1600x900/?boat") center center no-repeat;
+  background: linear-gradient(to right,#3204fd4d, #9907fa38), url(https://source.unsplash.com/1600x900/?boat) no-repeat top center;
+  background-size: cover;
+}
+
+.hero-full-screen .middle-content-section {
+  text-align: center;
+  color: #fefefe;
+}
+
+.hero-full-screen .top-content-section {
+  width: 100%;
+}
+
+.hero-full-screen .bottom-content-section {
+  padding: 1rem;
+}
+
+.hero-full-screen .bottom-content-section svg {
+  height: 3.75rem;
+  width: 3.75rem;
+  fill: #fefefe;
+}
+
+.hero-full-screen .top-bar {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu-text {
+  color: #fefefe;
+}
+
+.hero-full-screen .top-bar .menu li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-full-screen .top-bar .menu a {
+  color: #fefefe;
+  font-weight: bold;
+}
+
