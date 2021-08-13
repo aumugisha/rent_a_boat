@@ -2,7 +2,7 @@
 <%= simple_form_for(@boat) do |f| %>
   <%= f.input :name %>
   <%= f.label :photo %>
-  <%= f.file_field :photo, as: :file %>
+   <%= f.input :photos, as: :file, input_html: {multiple: true} %>
   <%= f.input :description %>
   <%= f.label :category %>
   <%= f.select :category, ['Yacht', 'Wind', 'Small'] %>

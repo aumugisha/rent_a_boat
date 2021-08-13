@@ -3,16 +3,76 @@
 <br>
   <h1><%= @boat.name %></h1>
 </div>
-<div class="container-perso ">
 
-<div class="boat-content">  
-  <%# <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
-  <div class="content">  <p class="p-big"><%= @boat.description %></p>
-    <p class="p-medium"><%= @boat.address %></p>  
-    <%= link_to @boat.user.full_name, users_show_path(@boat), {:style=>'color:blue; '} %>
-    <p class="p-small"><%= @boat.price_per_day %></p>
+<!-- Page Content -->
+<div class="container">
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+  
+      <div class="col-md-8">
+        <%= cl_image_tag @boat.photos.first.key, height: 500, width: 750, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+      </div>
+  
+      <div class="col-md-4">
+        <h3 class="my-3">Boat Description</h3>
+        <p><%= @boat.description %></p>
+        <br>
+        <h3 class="my-3">Boat Details</h3>
+                
+      <br>
+        
+        <ul>
+          <li><p ><%= @boat.address %></p></li>
+          <li><p><%= @boat.category %></p></li>
+          <li><p><%= @boat.price_per_day %></p></li>
+          <li><p><%= @boat.user.first_name %> <%= @boat.user.last_name %></p></li>
+          <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
+        </ul>
+      </div>
+          
+
+  
+    </div>
+    <!-- /.row -->
+  
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Boat pictures</h3>
+  
+    <div class="row">
+  
+      <div class="col-md-3 col-sm-6 mb-4 rounded-10">
+        <a href="#">
+              <%= cl_image_tag @boat.photos[1].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <%= cl_image_tag @boat.photos[2].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <%= cl_image_tag @boat.photos[3].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <%= cl_image_tag @boat.photos[4].key, height: 300, width: 400, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>>
+            </a>
+      </div>
+  
+    </div>
+    <!-- /.row -->
+  
   </div>
-<%= link_to "Book now", new_boat_booking_path(@boat) %>
+
+  <%= link_to "Book now", new_boat_booking_path(@boat) %>
+  <%= link_to "User profile", user_path(@boat.user_id) %>
+
 </div>
 
   <div class="d-flex justify-content-between actions">
@@ -23,9 +83,14 @@
 
   <div class="map-container"><div id="map"
      style="width: 100%; height: 600px;"
+<<<<<<< HEAD
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+=======
+     data-markers="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+>>>>>>> 8fca0441706c010200ef1976f53d7ecf79384544
 </div>
  
 

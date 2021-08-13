@@ -12,7 +12,6 @@
 @import "components/index";
 @import "pages/index";
 
-
 .top-boats-page {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?boats);
     background-size: cover;
@@ -96,11 +95,10 @@
   }
 
 .actions {
-    margin: 20px;
+    margin: 20PX;
     height: 50px;
     font-size: 24px;
 }
-  
 
 
   // Smallest device

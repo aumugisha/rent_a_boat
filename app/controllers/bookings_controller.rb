@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-before_action :set_boat
+before_action :set_boat, only: [:index, :create, :new]
 
   def index
     @bookings = Booking.all
@@ -11,12 +11,16 @@ before_action :set_boat
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.boat = @boat
-    
 
-    redirect_to boat_bookings_path(@boat)
+      if @booking.save
+        redirect_to boat_bookings_path(@boat)
+      else
+        render "new"
+      end
   end
 
   def index
@@ -24,12 +28,12 @@ before_action :set_boat
   end
 
   def show
-    @booking = Booking(params[:id])
+    @booking = Booking.find(params[:id])
   end
   
   private
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date )
+    params.require(:booking).permit(:start_date, :end_date, :id )
   end
 
   def set_boat

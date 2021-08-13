@@ -1,1 +1,9 @@
-<h1>Show</h1>
+<h1> <%= @booking.boat.name %> </h1>
+
+<h3> Renting request from <%= @booking.user.first_name %> <%= @booking.user.last_name %></h3>
+
+<p>From <%= @booking.start_date.to_s(:long) %> to <%= @booking.end_date.to_s(:long) %></p>
+
+ <% time = @booking.end_date - @booking.start_date %>
+
+<p>price =  <%= time*@booking.boat.price_per_day %> </p>
