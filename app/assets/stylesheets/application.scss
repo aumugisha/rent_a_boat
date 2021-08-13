@@ -56,7 +56,15 @@
     margin: auto;
   }
 
-
+  .card-img-user {
+    width: 80%;
+    height: 30vh;
+    object-fit:scale-down;
+    padding: 5px;
+    background-size: cover;
+    border-radius: 10px;
+    border-width: 10px;
+  }
 
   .card-category {
       width: 90%;

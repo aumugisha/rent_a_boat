@@ -26,7 +26,8 @@
           <li><p ><%= @boat.address %></p></li>
           <li><p><%= @boat.category %></p></li>
           <li><p><%= @boat.price_per_day %></p></li>
-          <li><p><%= @boat.user.first_name %> <%= @boat.user.last_name %></p></li>
+          <li>  <%= link_to @boat.user.full_name, user_path(@boat.user), {:style=>'color:blue; '} %> <br></li>
+        
           <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
         </ul>
       </div>
