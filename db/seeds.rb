@@ -35,7 +35,6 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
 
 10.times do |i|
   puts i 
-  file = URI.open('https://source.unsplash.com/1600x900/?boat')
   boat = Boat.create(
     user_id: user.id, 
     name: Faker::Name.name,
@@ -43,8 +42,12 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
     description: Faker::Lorem.sentence,
     price_per_day: (1..1000).to_a.sample.to_f,
     address: addresses[i] )
-    boat.photo.attach(io: file, filename: "boat#{i}.jpg", content_type: 'image/jpg')
-    file.close
+    5.times do |i|
+      file = URI.open('https://source.unsplash.com/1600x900/?boat')
+      puts i
+      boat.photos.attach(io: file, filename: "boat#{i}.jpg", content_type: 'image/jpg')
+      file.close
+    end
   
 
 puts boat.name

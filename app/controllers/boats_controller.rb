@@ -11,8 +11,11 @@ class BoatsController < ApplicationController
         @markers = @boats.geocoded.map do |boat|
           {
             lat: boat.latitude,
-            lng: boat.longitude
+            lng: boat.longitude,
+            infoWindow: {content: render_to_string(partial: "../views/boats/map_box.html.erb", locals: { boat: boat })}
           }
+          
+        
         end
     end
 
@@ -67,7 +70,7 @@ class BoatsController < ApplicationController
     end
 
     def boat_params
-      params.require(:boat).permit(:name, :category, :description, :price_per_day, :address, :photo)
+      params.require(:boat).permit(:name, :category, :description, :price_per_day, :address, photos: [])
     end
 
 end
