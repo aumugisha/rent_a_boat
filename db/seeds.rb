@@ -39,7 +39,7 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
     user_id: user.id, 
     name: Faker::Name.name,
     category: category.sample,
-    description: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraphs(number: 2),
     price_per_day: (1..1000).to_a.sample.to_f,
     address: addresses[i] )
     5.times do |i|
