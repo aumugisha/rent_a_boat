@@ -50,6 +50,7 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
     end
   
 
+
 puts boat.name
 end
 

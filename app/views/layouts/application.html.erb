@@ -14,7 +14,7 @@
 
   <body>
     <%= render 'shared/navbar' unless @disable_nav %>
-    <%= render 'shared/flashes' %>
+    <%= render 'shared/flashes' unless @disable_nav %>
 
 
     <p class="notice"><%= notice %></p>

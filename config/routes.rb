@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :views
   devise_for :users
+  resources :users, only: [:show]
   resources :boats do
   resources :bookings
   end 
