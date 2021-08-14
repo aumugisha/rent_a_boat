@@ -12,7 +12,8 @@ class BoatsController < ApplicationController
           {
             lat: boat.latitude,
             lng: boat.longitude,
-            infoWindow: {content: render_to_string(partial: "../views/boats/map_box.html.erb", locals: { boat: boat })}
+            infoWindow: render_to_string(partial: "map_box", locals: { boat: boat }),
+            image_url: helpers.asset_url('marker.png')
           }
           
         

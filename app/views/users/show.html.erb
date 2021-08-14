@@ -1,0 +1,29 @@
+div class="row">
+
+    <div class="col-md-12" style="color: black ">
+        <h1> Welcome to <%= @user.full_name %> boat list</h1>
+        <a class="btn btn-primary" href="/boats">Back</a> 
+    </div> 
+
+        
+        
+<div class="row col-12 content">
+
+    
+
+    <% @boats.each do |boat|%>
+        <div class="card col-6 card-img-user"> 
+            <div class="box" style="aspect-ratio: 1/1; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path boat.photos.first.key,  crop: :fill%>')" >
+            <li class="boat-group-item, text-bottom" style="color: white "> <%= link_to boat.name, boat_path(boat), {:style=>'color:white; '} %>  <br></li>
+            </div>                   
+        </div>
+    <% end %>
+
+    
+</div>
+
+
+       
+        
+    
+</div>
