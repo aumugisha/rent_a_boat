@@ -2,14 +2,29 @@
 <div class="top-boats-page">
   <h1>Boats list</h1>
 </div>
-<%= form_tag boats_path, method: :get do %>
+
+  <div class="container-perso">
+  
+  <%= form_tag boats_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find a boat"
+    placeholder: "Give us a boat name so we can sail for you"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn-boats" %>
+  <button class="btn-boats third"> <%= link_to "Add new boat", new_boat_path %> </button> 
+  </div>
+  
 <% end %>
+
+
+
+
+
+
+
+
+
 
 <div class="container-perso">
   <ul class="cards">
@@ -37,7 +52,12 @@
     <% end %>
   </ul>
 
-  <%= link_to "Add new boat", new_boat_path %><br>
+    <div >
+    <div type="button" class="btn btn-outline-light btn-rounded" data-mdb-ripple-color="dark">
+    
+       
+
+
     <div class="map-container"><div id="map"
     style="width: 100%; height: 600px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div></div>
 </div>
