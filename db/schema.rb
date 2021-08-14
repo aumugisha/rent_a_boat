@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 2021_08_06_221814) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
-    t.integer "price"
+    t.string "start_date"
+    t.string "end_date"
+    t.string "price"
     t.bigint "user_id", null: false
     t.bigint "boat_id", null: false
     t.datetime "created_at", precision: 6, null: false
