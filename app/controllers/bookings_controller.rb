@@ -23,6 +23,10 @@ before_action :set_boat, only: [:index, :create, :new]
       end
   end
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end

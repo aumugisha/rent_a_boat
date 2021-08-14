@@ -26,20 +26,32 @@ user_two = User.create(
   first_name: "Georges",
   last_name: "Dupont"
 )
+
+user_three = User.create(
+  email: "testes@test.com", 
+  password: "12345678",
+  first_name: "Marcel",
+  last_name: "Proust"
+)
+
+
 category = ["large boats", "medium boats", "small boats"]
 addresses = ["Brugplein 11", "3198 LK Europoort", 
 "Western Docks", "Haven Kloosternol 1", 
-"Nijverheidsstraat 11A", "149 Waterside Rd, Barton-upon-Humber DN18 5BG, United Kingdom",
-"King's Saltern Rd, Lymington SO41 3QD, United Kingdom", "The Docks, Hakin, Milford Haven SA73 3AX, United Kingdom",
-"Playa de Río Real Carretera N340 km 186, 29600 Marbella, Málaga, Spain","Av. Carmen Sevilla, s/n, 29670 Marbella, Málaga, Spain" ]
+"Nijverheidsstraat 11A", "149 Waterside Rd",
+"King's Saltern Rd, Lymington SO41 3QD, United Kingdom", "Milford Haven SA73 3AX",
+"Playa de Río Real Carretera","Av. Carmen Sevilla" ]
+
+users = [user, user_two, user_three]
+
 
 10.times do |i|
   puts i 
   boat = Boat.create(
-    user_id: user.id, 
+    user_id: users.sample.id, 
     name: Faker::Name.name,
     category: category.sample,
-    description: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraphs(number: 2),
     price_per_day: (1..1000).to_a.sample.to_f,
     address: addresses[i] )
     5.times do |i|
@@ -49,6 +61,7 @@ addresses = ["Brugplein 11", "3198 LK Europoort",
       file.close
     end
   
+
 
 puts boat.name
 end

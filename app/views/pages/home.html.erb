@@ -9,143 +9,32 @@
     <h1>Rent-A-Boat</h1>
     <h3>The best solution for your boat rental </h3>
     <section id="hero">
-
+    <% if user_signed_in? %>
+      <p> Hi <%= current_user.first_name %></p>  
+    <% else %>
         <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
         <%= link_to "Browse boats", boats_path, class: "btn btn-alert" %>
       </section>
   </div>
 
-  <div class="bottom-content-section" data-magellan data-threshold="0">
-    <a href="#main-content-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"/></svg></a>
-  </div>
+<br><br>
 
-
-  <%= form_tag boats_path, method: :get do %>
+<div class="text-center">
+ <%= form_tag boats_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a boat by Name, description, or location."
   %>
+  <br>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+</div>
+ 
   <div id="main-content-section" data-magellan-target="main-content-section">
   <!-- your content goes here -->
-  </div>
-</div>
-
-</div>
-
-
-
-<div id="1">
-<section id="kb">
-  <nav>
-   Sign in 
-
-  </nav>
-</section>
-
-  <div id="image">
-
-    <!--<img src="https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="boat" /> -->
-
-  </div>
-
-
-</div>
-
-<div id="rentboats">
-
-  <h1>
-    <strong> Rentboats </strong>
-  </h1>
-</div>
-
-<div class= >
-
-  <!-- <style>
-  body {
-    font-family: sans-serif;
-    margin: 30px;
-  }
-
-  li {
-    margin-bottom: 10px;
-  }
-
-  #password {
-    height: 25px;
-    padding-left: 6px;
-    width: 220px;
-  }
-
-  </style>
-  
-   -->
-       
-   
-
-  <% if user_signed_in? %>
-      <%= current_user.email %>
-  <% end %>
-  <div id="3">
-
-    <h2 id="h2">
-      Welcome home buddy ! 
-      You're at the right place to rent boats ! 
-    <br>
-      You like boats right ? 
-    <br>
-      Let's go !
-    </h2>
-
-  </div>
-
-</div>
-
-  <br>
-    <div>
-      <p>The boats we provide are premium quality.</p>
-    </div>
-    <div>
-
-      <section id="hero">
-
-        <a href="/boats" target="_blank"class=btn btn success> Login here </a>
-      </section>
-    </div>
-<br>
-
-<div>
-  <a href id="1">Contact us here</a>
-</div>
-
-<div>
-  <article>
-  
-  </article>
-
-</div>
-
-<div>
-  <ol>
-    
-  
-  </ol>
-</div>
-  
-
-
-
-
-<footer>
-
-Help
-About
-API
-Privacy
-
-<br>
+ 
 
 <div class="c mt-10">
   <i class="fab fa-bitcoin mt-10" id="r" width="" height="6"></i>
@@ -161,4 +50,4 @@ Privacy
 
 </div>
 
-</footer>
+</footer

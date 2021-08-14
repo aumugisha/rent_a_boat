@@ -12,7 +12,6 @@ class BoatsController < ApplicationController
           {
             lat: boat.latitude,
             lng: boat.longitude,
-            infoWindow: {content: render_to_string(partial: "../views/boats/map_box.html.erb", locals: { boat: boat })}
           }
           
         
@@ -20,7 +19,7 @@ class BoatsController < ApplicationController
     end
 
     def show
-      @marker= [{
+      @markers= [{
         lat: @boat.geocode[0],
         lng: @boat.geocode[1]
       } ]
