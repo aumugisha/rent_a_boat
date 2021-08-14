@@ -12,8 +12,6 @@ class BoatsController < ApplicationController
           {
             lat: boat.latitude,
             lng: boat.longitude,
-            infoWindow: render_to_string(partial: "map_box", locals: { boat: boat }),
-            image_url: helpers.asset_url('marker.png')
           }
           
         
@@ -21,7 +19,7 @@ class BoatsController < ApplicationController
     end
 
     def show
-      @marker= [{
+      @markers= [{
         lat: @boat.geocode[0],
         lng: @boat.geocode[1]
       } ]
