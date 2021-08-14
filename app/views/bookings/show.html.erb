@@ -7,3 +7,10 @@
  <% time = @booking.end_date - @booking.start_date %>
 
 <p>price =  <%= time*@booking.boat.price_per_day %> </p>
+
+<% if current_user == @booking.boat.user %>
+<p> Accepter ou refuser la réservation ? </p>
+    <%= f.input :booking_status %>
+<% end %>
+
+       

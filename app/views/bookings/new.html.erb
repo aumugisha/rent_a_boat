@@ -4,7 +4,7 @@
   <%= f.input :start_date %>
   <%= f.input :end_date %>
 
-<div class="container">
+<div class="container-perso">
    <h3 class="my-3">Boat Description</h3>
         <p><%= @boat.description %></p>
         <br>
@@ -14,34 +14,34 @@
 
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <%= cl_image_tag @boat.photos.first.key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+              <%= cl_image_tag @boat.photos[0].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
             </a>
       </div>
   
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <%= cl_image_tag @boat.photos.first.key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+              <%= cl_image_tag @boat.photos[1].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
             </a>
       </div>
   
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <%= cl_image_tag @boat.photos.first.key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
+              <%= cl_image_tag @boat.photos[2].key, height: 300, width: 500, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>
             </a>
       </div>
   
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <%= cl_image_tag @boat.photos.first.key, height: 300, width: 400, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>>
+              <%= cl_image_tag @boat.photos[3].key, height: 300, width: 400, crop: :fill, class: "w-100 shadow-1-strong rounded mb-8" %>>
             </a>
       </div>
         
 </div>
          <ul>
-          <li><p ><%= @boat.address %></p></li>
-          <li><p><%= @boat.category %></p></li>
-          <li><p><%= @boat.price_per_day %></p></li>
-          <li><p><%= @boat.user.first_name %> <%= @boat.user.last_name %></p></li>
+          <li><p><strong> Address: </strong> <%= @boat.address %> </p></li>
+          <li><p><strong> Category:</strong> <%= @boat.category %></p></li>
+          <li><p><strong> Price per day: </strong> <%= @boat.price_per_day %>€</p></li>
+          <li><p><strong> Owner :</strong> <%= @boat.user.first_name %> <%= @boat.user.last_name %> </p></li>
         </ul>
 <br>
    <%= f.submit %>

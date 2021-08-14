@@ -24,7 +24,7 @@ before_action :set_boat, only: [:index, :create, :new]
   end
 
   def index
-    @bookings = Booking.all(params[:user_id])
+    @bookings = Booking.all
   end
 
   def show
